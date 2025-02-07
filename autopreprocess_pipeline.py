@@ -98,7 +98,7 @@ def autopreprocess_standard(varargsin, subject = None, startsubj =0):
 
                     trllength = 'all'
                     npy = copy.deepcopy(tmpdat)
-                    npy.segment(trllength = trllength, remove_artifact='no')
+                    npy.segment(trllength = trllength, remove_artifact='yes')
                     # subpath = os.path.join(preprocpath,subs[s])
                     # Path(subpath).mkdir(parents=True, exist_ok=True)
                     sesspath = os.path.join(preprocpath,subs[s],sessions[sess]+'/eeg/')
@@ -108,7 +108,7 @@ def autopreprocess_standard(varargsin, subject = None, startsubj =0):
                     if rawreport == 'yes':#for the raw data report
                         lengthtrl = 10
                         pdf = copy.deepcopy(tmpdat)
-                        pdf.segment(trllength = lengthtrl, remove_artifact='no')
+                        pdf.segment(trllength = lengthtrl, remove_artifact='yes')
                         pdf.save_pdfs(sesspath)
                    # except:
                    #     print('processing of '+inname+ ' went wrong')
